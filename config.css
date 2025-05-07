@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00008B;
+    --secondary-color: #000066;
+    --highlight-color: #FFD700;
+    --text-color: #FFFFFF;
+    --light-text: #CCCCCC;
+    --input-bg: #FFFFFF;
+    --input-text: #333333;
+    --greenscreen-color: #00B140; /* Greenscreen-Grün */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--greenscreen-color); /* Geändert zu Greenscreen-Grün */
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.config-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 50, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--highlight-color);
+}
+
+.message {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: var(--highlight-color);
+    border-bottom: 3px solid var(--highlight-color);
+    margin-bottom: -2px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button, .button {
+    padding: 12px 20px;
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+button:hover, .button:hover {
+    background-color: #FFC000;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.inline-form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.position-input {
+    width: 60px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    margin-right: 5px;
+}
+
+.small-button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.delete-button {
+    background-color: #CC0000;
+}
+
+.delete-button:hover {
+    background-color: #FF0000;
+}
+
+/* Bildvorschau und Thumbnail-Stile */
+.thumbnail {
+    max-width: 100px;
+    max-height: 60px;
+    border-radius: 3px;
+    border: 1px solid var(--highlight-color);
+}
+
+.image-preview {
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+}
+
+.hint {
+    font-size: 12px;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+/* Input-Datei-Styling */
+input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .config-container {
+        padding: 20px;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    
+    .tab {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+    
+    .tab.active {
+        border-bottom: 1px solid var(--highlight-color);
+        margin-bottom: 0;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .inline-form {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .image-preview {
+        max-width: 100%;
+    }
+}
